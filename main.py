@@ -1,15 +1,17 @@
 import os
 import discord
 from dotenv import load_dotenv
+from discord.ext import commands
 
-class MyClient(discord.Client):
-    async def on_ready(self):
-        print(f'Logged on as {self.user}!')
+bot = discord.Bot()
 
-    async def on_message(self, message):
-        print(f'Message from {message.author}: {message.content}')
+@bot.event
+async def on_ready():
+    print(f'Logged on as {bot.user}!')
 
-client = MyClient()
+@bot.command()
+async def ping(ctx):
+    await ctx.respond('pong')
 
 load_dotenv()
-client.run(os.getenv('BOT_TOKEN'))
+bot.run(os.getenv('BOT_TOKEN'))

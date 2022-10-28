@@ -5,7 +5,6 @@ from discord.ext import commands
 import asyncio
 from dotenv import load_dotenv
 
-
 bot = commands.Bot(intents=discord.Intents.all())
 
 def load():
@@ -15,9 +14,9 @@ def load():
 
 @bot.event
 async def on_ready():
-    print(f"Bot is ready")
+    print(f"Bot is ready as {bot.user}")
 
 load()
-load_dotenv()
+load_dotenv(".env")
 
-bot.run(os.getenv("BOT_TOKEN"))
+bot.run("MTAzNTQwMTk0NDcyMzg4MjAzNQ.GX_8MO.Ifh0lCDwCI5HNmXB5KVosUIoj9zo-tyqR-gAo0")

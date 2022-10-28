@@ -1,17 +1,23 @@
-import os
 import discord
-from dotenv import load_dotenv
+import os
+from discord import client
 from discord.ext import commands
+import asyncio
+from dotenv import load_dotenv
 
-bot = discord.Bot()
+
+bot = commands.Bot(intents=discord.Intents.all())
+
+def load():
+    for filename in os.listdir("./cogs"):
+        if filename.endswith(".py"):
+            bot.load_extension(f"cogs.{filename[:-3]}")
 
 @bot.event
 async def on_ready():
-    print(f'Logged on as {bot.user}!')
+    print(f"Bot is ready")
 
-@bot.command()
-async def ping(ctx):
-    await ctx.respond('pong')
-
+load()
 load_dotenv()
-bot.run(os.getenv('BOT_TOKEN'))
+
+bot.run(os.getenv("BOT_TOKEN"))

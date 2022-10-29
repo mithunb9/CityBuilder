@@ -19,4 +19,4 @@ async def on_ready():
 load()
 load_dotenv(".env")
 
-bot.run("MTAzNTQwMTk0NDcyMzg4MjAzNQ.GX_8MO.Ifh0lCDwCI5HNmXB5KVosUIoj9zo-tyqR-gAo0")
+bot.run(os.getenv("BOT_TOKEN"))

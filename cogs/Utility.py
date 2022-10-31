@@ -11,7 +11,7 @@ def build_map():
 
 def render_map(gameBoard):
     map = ":cityscape::zero::one::two::three::four::five::six::seven::eight::nine:\n"
-    number_key = {0: 'zero', 1: 'one', 2: 'two', 3: 'three', 4: 'four', 5: 'five', 6: 'six', 7: 'seven', 8: 'eight', 9: 'ni ne'}
+    number_key = {0: 'zero', 1: 'one', 2: 'two', 3: 'three', 4: 'four', 5: 'five', 6: 'six', 7: 'seven', 8: 'eight', 9: 'nine'}
 
     for i in range(len(gameBoard)):
         map += ":" + number_key.get(i) + ":"
